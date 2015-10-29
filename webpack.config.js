@@ -1,24 +1,28 @@
-path = require('path')
+var path = require('path');
 
-module.exports =
+module.exports = {
 
-  context: path.join(__dirname, 'src')
+  context: path.join(__dirname, 'src'),
 
-  entry: './index'
+  entry: './index',
 
-  output:
-    path: path.join(__dirname, 'target')
-    filename: 'app.js'
+  output: {
+    path: path.join(__dirname, 'target'),
+    filename: 'app.js',
     publicPath: '/'
+  },
 
-  resolve:
-    extensions: ['', '.js', '.ts', '.tsx']
+  resolve: {
+    extensions: ['', '.js', '.ts', '.tsx'],
     root: path.join(__dirname, 'src')
+  },
 
-  module:
+  module: {
     loaders: [
       {
-        test: /\.tsx?$/
+        test: /\.tsx?$/,
         loader: 'ts-loader'
       }
     ]
+  }
+};
